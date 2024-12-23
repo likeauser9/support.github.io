@@ -1,0 +1,125 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  background-color: #FFB6C1;
+}
+
+.hint_wrapper {
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 40px;
+  text-shadow: 5px 5px 3px #F664AF;
+}
+
+.envelope_wrapper {
+  height: 200px;
+  width: 300px;
+  background-color:  #F664AF;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  box-shadow: 10px 10px 10px rgba(179, 68, 108, 0.3);
+  align-items: center;
+  z-index: 0;
+}
+
+.envelope_wrapper.opened .lid.one {
+  transform: rotateX(90deg);
+  transition-delay: 0s;
+}
+
+.envelope_wrapper.opened .lid.two {
+  transform: rotateX(180deg);
+  transition-delay: .25s;
+}
+
+.envelope_wrapper.opened .letter {
+  transform: translateY(-150px);
+  transition-delay: .5s;
+}
+
+.letter {
+  padding: 5px;
+  position: absolute;
+  border: 2px solid #FF47CA;
+  top: 0;
+  width: 80%;
+  height: 80%;
+  background-color: white;
+  border-radius: 15px;
+  z-index: 1;
+  transition: transform 0.5s ease, z-index 0s 0.5s;
+}
+
+.letter p {
+  text-align: center;
+  font-size: 30px;
+  color: #3B4049;
+}
+
+.envelope {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-top: 100px solid transparent;
+  border-right: 150px solid  #FF97BB;
+  border-bottom: 100px solid  #FF97BB;
+  border-left: 150px solid #EB5284;
+  z-index: 3;
+}
+
+.lid {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-right: 150px solid transparent;
+  border-bottom: 100px solid transparent;
+  border-left: 150px solid transparent;
+  transform-origin: top;
+  transition: transform .25s linear;
+}
+
+.lid.one {
+  border-top: 100px solid #FFCBDB;
+  transform: rotateX(0deg);
+  z-index: 3;
+  transition-delay: .75s;
+}
+
+.lid.two {
+  border-top: 100px solid #FFCBDB;
+  transform: rotateX(90deg);
+  z-index: 1;
+  transition-delay: .5s;
+}
+
+/* .wrapper:hover .lid.one {
+  transform: rotateX(90deg);
+  transition-delay: 0s;
+}
+
+.wrapper:hover .lid.two {
+  transform: rotateX(180deg);
+  transition-delay: .25s;
+}
+
+.wrapper:hover .letter {
+  transform: translateY(-150px);
+  transition-delay: .5s;
+} */
